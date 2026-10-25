@@ -1,0 +1,24 @@
+name: Bug report
+description: Something else isn't working
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: macOS and Safari versions
+      placeholder: "macOS 27.0.1, Safari 27.0.1"
+    validations:
+      required: true
+  - type: textarea
+    id: console
+    attributes:
+      label: Console errors
+      description: From Develop → Web Extension Background Content, or the page's Web Inspector console.
+      render: text

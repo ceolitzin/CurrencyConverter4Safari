@@ -115,7 +115,7 @@ make build TEAM=XXXXXXXXXX
 
 Después de cambiar la extensión, vuelve a correr `make install` y recarga la página en Safari. Para depurar, activa **Ajustes → Avanzado → Mostrar funciones para desarrolladores web** y usa **Desarrollo → Web Extension Background Content** para el script de fondo y el Web Inspector normal para el content script.
 
-Los reportes de errores y pull requests son bienvenidos. Si algún formato de precio no se reconoce, abre un issue con el texto exacto que seleccionaste.
+Los reportes de errores y pull requests son bienvenidos; ver [CONTRIBUTING.md](CONTRIBUTING.md). Si algún formato de precio no se reconoce, [abre un issue](https://github.com/ceolitzin/CurrencyConverter4Safari/issues/new/choose) con el texto exacto que seleccionaste. Los cambios están en [CHANGELOG.md](CHANGELOG.md).
 
 ## Licencia
 

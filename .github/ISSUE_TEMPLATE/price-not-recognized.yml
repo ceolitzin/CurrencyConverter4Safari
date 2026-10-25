@@ -1,0 +1,35 @@
+name: Price not recognized
+description: A price that shows no bubble, or the wrong amount or currency
+labels: ["bug"]
+body:
+  - type: input
+    id: selection
+    attributes:
+      label: Text you selected
+      description: Copy and paste exactly what you selected.
+      placeholder: "Windows 10 Home - $119"
+    validations:
+      required: true
+  - type: input
+    id: expected
+    attributes:
+      label: What you expected
+      placeholder: "119 USD converted to MXN"
+    validations:
+      required: true
+  - type: input
+    id: actual
+    attributes:
+      label: What happened
+      placeholder: "No bubble / converted 10 instead of 119 / read it as EUR"
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Page URL (if public)
+  - type: input
+    id: settings
+    attributes:
+      label: Target currency and what "$" means in your settings
+      placeholder: "MXN, $ = USD"

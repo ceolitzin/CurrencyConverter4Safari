@@ -115,7 +115,7 @@ make build TEAM=XXXXXXXXXX
 
 After changing the extension, run `make install` again and reload the page in Safari. To debug, turn on **Settings → Advanced → Show features for web developers**, then use **Develop → Web Extension Background Content** for the background script and the regular Web Inspector for the content script.
 
-Bug reports and pull requests are welcome. If a price format isn't recognized, please open an issue with the exact text you selected.
+Bug reports and pull requests are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md). If a price format isn't recognized, please [open an issue](https://github.com/ceolitzin/CurrencyConverter4Safari/issues/new/choose) with the exact text you selected. Changes are listed in [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 
