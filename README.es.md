@@ -14,11 +14,21 @@ Funciona como la conversión de divisas del menú de selección de Microsoft Edg
 
 Tomadas en Safari en español, convirtiendo a pesos mexicanos.
 
-| Rupias con agrupación india | Euros en formato europeo |
-| :---: | :---: |
-| ![₹1,08,990 convertido a $21,433.51 MXN](docs/screenshots/bubble-inr.jpg) | ![1.349,00 € convertido a $28,234.39 MXN](docs/screenshots/bubble-eur.jpg) |
-| **Una frase completa: convierte los US$ 200, no los 32 GB** | **Ajustes en el botón de la barra** |
-| ![Frase seleccionada convertida a $3,736.52 MXN](docs/screenshots/bubble-sentence.jpg) | <img src="docs/screenshots/popup.jpg" width="320" alt="Ajustes: moneda destino, significado de $, actualizar tasas y fuente de las tasas"> |
+**Rupias con agrupación india**
+
+![₹1,08,990 convertido a $21,433.51 MXN](docs/screenshots/bubble-inr.jpg)
+
+**Euros en formato europeo**
+
+![1.349,00 € convertido a $28,234.39 MXN](docs/screenshots/bubble-eur.jpg)
+
+**Una frase completa: convierte los US$ 200, no los 32 GB**
+
+![Frase seleccionada convertida a $3,736.52 MXN](docs/screenshots/bubble-sentence.jpg)
+
+**Ajustes en el botón de la barra**
+
+<img src="docs/screenshots/popup.jpg" width="320" alt="Ajustes: moneda destino, significado de $, actualizar tasas y fuente de las tasas">
 
 ## Funciones
 

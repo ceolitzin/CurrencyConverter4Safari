@@ -14,11 +14,21 @@ It works like the currency conversion in Microsoft Edge's selection menu, withou
 
 Taken in Safari with the interface in Spanish, converting to Mexican pesos.
 
-| Rupees with Indian grouping | Euros in European format |
-| :---: | :---: |
-| ![₹1,08,990 converted to $21,433.51 MXN](docs/screenshots/bubble-inr.jpg) | ![1.349,00 € converted to $28,234.39 MXN](docs/screenshots/bubble-eur.jpg) |
-| **A whole sentence: it converts the US$ 200, not the 32 GB** | **Settings in the toolbar button** |
-| ![A selected sentence converted to $3,736.52 MXN](docs/screenshots/bubble-sentence.jpg) | <img src="docs/screenshots/popup.jpg" width="320" alt="Settings popup: target currency, meaning of $, refresh rates and the rate source"> |
+**Rupees with Indian grouping**
+
+![₹1,08,990 converted to $21,433.51 MXN](docs/screenshots/bubble-inr.jpg)
+
+**Euros in European format**
+
+![1.349,00 € converted to $28,234.39 MXN](docs/screenshots/bubble-eur.jpg)
+
+**A whole sentence: it converts the US$ 200, not the 32 GB**
+
+![A selected sentence converted to $3,736.52 MXN](docs/screenshots/bubble-sentence.jpg)
+
+**Settings in the toolbar button**
+
+<img src="docs/screenshots/popup.jpg" width="320" alt="Settings popup: target currency, meaning of $, refresh rates and the rate source">
 
 ## Features
 
