@@ -48,6 +48,10 @@ The project lists `extension/` files individually (only `icons` and `_locales` a
 
 Xcode registers every app it builds with LaunchServices, so a copy left in `build/` makes Safari list the extension twice. `make install` and `make clean` unregister it; if it happens anyway, `pluginkit -mDAvvv -i com.ceolitzin.CurrencyConverter.Extension` shows which copies are registered.
 
+## Screenshots
+
+`docs/screenshots/` are real captures from Safari. `docs/demo/index.html` is a fictional price page that selects a price by itself: it polls `scenario.txt` next to it (`us`, `in`, `de`, `uk`, `jp`, `line`, or `none`) and fires the same mouse events a reader would. Serve that folder over HTTP (a copy outside `~/Documents` if the server can't read it), have the user open it in Safari, then change `scenario.txt` and capture the page area only, never the tab bar.
+
 ## Releasing
 
 Bump the version in `extension/manifest.json`, `package.json` and `MARKETING_VERSION` in `xcode/Currency Converter.xcodeproj/project.pbxproj`, and add an entry to `CHANGELOG.md`.

@@ -9,3 +9,6 @@ xcuserdata/
 
 # Packaged builds
 *.zip
+
+# Screenshot demo state
+docs/demo/scenario.txt

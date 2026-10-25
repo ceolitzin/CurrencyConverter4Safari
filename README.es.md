@@ -6,6 +6,20 @@ Extensión de Safari para macOS: selecciona un precio en cualquier página y apa
 
 Funciona como la conversión de divisas del menú de selección de Microsoft Edge, sin enviar a ningún servidor lo que lees.
 
+<p align="center">
+  <img src="docs/screenshots/bubble-usd.jpg" width="600" alt="Al seleccionar $1,299 en una tabla de precios aparece una burbuja con $24,268.68 MXN y la tasa 1 USD = 18.6826 MXN">
+</p>
+
+## Capturas
+
+Tomadas en Safari en español, convirtiendo a pesos mexicanos.
+
+| Rupias con agrupación india | Euros en formato europeo |
+| :---: | :---: |
+| ![₹1,08,990 convertido a $21,433.51 MXN](docs/screenshots/bubble-inr.jpg) | ![1.349,00 € convertido a $28,234.39 MXN](docs/screenshots/bubble-eur.jpg) |
+| **Una frase completa: convierte los US$ 200, no los 32 GB** | **Ajustes en el botón de la barra** |
+| ![Frase seleccionada convertida a $3,736.52 MXN](docs/screenshots/bubble-sentence.jpg) | <img src="docs/screenshots/popup.jpg" width="320" alt="Ajustes: moneda destino, significado de $, actualizar tasas y fuente de las tasas"> |
+
 ## Funciones
 
 - **Selecciona y listo:** selecciona `$119`, `₹8,024.13`, `1.234,56 €` o una línea completa como `Windows 10 Home - $119` y ves la conversión al instante.

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aero 14 around the world</title>
+<style>
+  :root { color-scheme: light; }
+  body { margin: 0; background: #f4f2ee; color: #1f2328; font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 56px 28px 80px; }
+  .kicker { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: #8a6d3b; font-weight: 600; }
+  h1 { font: 700 36px/1.2 "New York", Georgia, serif; margin: 8px 0 14px; }
+  .lede { font-size: 19px; color: #4a4f57; margin: 0 0 34px; }
+  table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  th, td { padding: 14px 20px; text-align: left; border-bottom: 1px solid #ece9e3; }
+  th { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: #777; background: #faf9f6; }
+  td.price { font-variant-numeric: tabular-nums; font-weight: 600; text-align: right; }
+  th:last-child { text-align: right; }
+  tr:last-child td { border-bottom: 0; }
+  p { margin: 28px 0 0; }
+</style>
+</head>
+<body>
+<main>
+  <div class="kicker">Buying guide</div>
+  <h1>What the Aero 14 laptop costs around the world</h1>
+  <p class="lede">Same machine, six price tags. We checked the official store in each country for the base model with 16 GB of memory.</p>
+  <table>
+    <tr><th>Country</th><th>Base model</th></tr>
+    <tr><td>United States</td><td class="price" id="us">$1,299</td></tr>
+    <tr><td>Mexico</td><td class="price" id="mx">MX$27,999</td></tr>
+    <tr><td>India</td><td class="price" id="in">₹1,08,990</td></tr>
+    <tr><td>Germany</td><td class="price" id="de">1.349,00 €</td></tr>
+    <tr><td>United Kingdom</td><td class="price" id="uk">£1,199</td></tr>
+    <tr><td>Japan</td><td class="price" id="jp">¥198,800</td></tr>
+  </table>
+  <p id="line">The 32 GB upgrade adds another US$ 200 everywhere, and the extended warranty is 89 euros in Europe.</p>
+</main>
+<script>
+  // Demo driver: selects the price named in scenario.txt, the way a reader would with the mouse
+  let current = null;
+  function apply(name) {
+    const sel = getSelection();
+    sel.removeAllRanges();
+    document.dispatchEvent(new MouseEvent("mousedown", { bubbles: true }));
+    const el = document.getElementById(name);
+    if (!el) return;
+    const range = document.createRange();
+    if (name === "line") {
+      const text = el.firstChild, start = 0, end = text.data.indexOf(", and");
+      range.setStart(text, start); range.setEnd(text, end);
+    } else {
+      range.selectNodeContents(el);
+    }
+    sel.addRange(range);
+    document.dispatchEvent(new MouseEvent("mouseup", { bubbles: true }));
+  }
+  async function poll() {
+    try {
+      const name = (await (await fetch("scenario.txt?" + Date.now(), { cache: "no-store" })).text()).trim();
+      if (name !== current) { current = name; apply(name); }
+    } catch (_) {}
+    setTimeout(poll, 400);
+  }
+  setTimeout(poll, 800);
+</script>
+</body>
+</html>
