@@ -1,0 +1,17 @@
+{
+  "extName": { "message": "Currency Converter" },
+  "extDescription": { "message": "Select a price on any web page and see it converted to your currency instantly." },
+  "clickToCopy": { "message": "click to copy" },
+  "copied": { "message": "Copied ✓" },
+  "copyFailed": { "message": "Couldn't copy" },
+  "convertTo": { "message": "Convert to" },
+  "dollarMeans": { "message": "A plain “%s” means" },
+  "groupCommon": { "message": "Common" },
+  "groupAll": { "message": "All currencies" },
+  "saved": { "message": "Saved ✓" },
+  "refreshRates": { "message": "Refresh rates now" },
+  "loading": { "message": "Loading…" },
+  "ratesBy": { "message": "Rates by" },
+  "updated": { "message": "Updated:" },
+  "ratesError": { "message": "Couldn't load exchange rates:" }
+}

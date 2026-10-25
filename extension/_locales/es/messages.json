@@ -1,0 +1,17 @@
+{
+  "extName": { "message": "Conversor de Divisas" },
+  "extDescription": { "message": "Selecciona un precio en cualquier página y ve su conversión a tu moneda al instante." },
+  "clickToCopy": { "message": "clic para copiar" },
+  "copied": { "message": "Copiado ✓" },
+  "copyFailed": { "message": "No se pudo copiar" },
+  "convertTo": { "message": "Convertir a" },
+  "dollarMeans": { "message": "El símbolo “%s” sin aclarar significa" },
+  "groupCommon": { "message": "Frecuentes" },
+  "groupAll": { "message": "Todas" },
+  "saved": { "message": "Guardado ✓" },
+  "refreshRates": { "message": "Actualizar tasas ahora" },
+  "loading": { "message": "Cargando…" },
+  "ratesBy": { "message": "Tasas de" },
+  "updated": { "message": "Actualizadas:" },
+  "ratesError": { "message": "No se pudieron obtener las tasas:" }
+}

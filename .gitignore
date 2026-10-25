@@ -1,0 +1,11 @@
+.DS_Store
+node_modules/
+
+# Xcode
+build/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+
+# Packaged builds
+*.zip

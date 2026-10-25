@@ -1,0 +1,122 @@
+# Currency Converter for Safari
+
+*[Leer en español](README.es.md)*
+
+A Safari extension for macOS: select a price on any web page and a small bubble shows it converted to your currency. Click the bubble to copy the amount.
+
+It works like the currency conversion in Microsoft Edge's selection menu, without sending anything you read to a server.
+
+## Features
+
+- **Select and see:** select `$119`, `₹8,024.13`, `1.234,56 €` or a whole line like `Windows 10 Home - $119` and get the conversion instantly.
+- **Click to copy:** the converted amount is copied as a plain number (`2223.23`), ready to paste into a spreadsheet.
+- **Your currency:** choose the target currency from the toolbar button (about 160 currencies). The default comes from your browser's region.
+- **The ambiguous `$`:** choose what a plain `$` means (USD, MXN, CAD, AUD, ARS, COP…), because on a Mexican site `$` is pesos.
+- **Many formats:**
+  - Symbols: `$ US$ MX$ CA$ A$ R$ € £ ¥ ₹ ₩ ₽ ₺ ₱ ₪ ₫ ฿ zł Kč` and more
+  - ISO codes: `USD 100`, `100 EUR`
+  - Words in English and Spanish: `100 dollars`, `300 pesos`, `20 euros`, `50 dólares canadienses`
+  - Number formats: `1,234.56`, `1.234,56`, `1 234,56`, Indian `1,23,456.78`
+  - Abbreviations: `12.5k`, `$5 mil`, `€5M`, `1.5 millones de dólares`
+- **English and Spanish** interface, following Safari's language.
+- **Private:** see [Privacy](#privacy).
+
+## Requirements
+
+- macOS 12 or later with Safari 16 or later
+- Xcode to build it (the project was made with Xcode 27.1; see [Building with an older Xcode](#building-with-an-older-xcode))
+
+The extension isn't on the App Store yet, so you build it yourself. It takes about a minute.
+
+## Install
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/ceolitzin/CurrencyConverter4Safari.git
+   cd CurrencyConverter4Safari
+   ```
+
+2. Find your Apple development team ID. If you have signed into Xcode with your Apple ID (Xcode → Settings → Accounts), it's the 10-character code in parentheses here:
+
+   ```bash
+   security find-certificate -c "Apple Development" -p | openssl x509 -noout -subject
+   ```
+
+   Look for `OU=XXXXXXXXXX`.
+
+3. Build and install into `/Applications`:
+
+   ```bash
+   make install TEAM=XXXXXXXXXX
+   ```
+
+   The app opens once so Safari can find the extension. You can quit it.
+
+4. In Safari, open **Settings → Extensions**, turn on **Currency Converter**, and allow it on all websites (or on the sites you choose).
+
+### Without an Apple ID
+
+`make install` without `TEAM` signs the app to run only on your Mac. Safari only loads extensions signed this way while **Develop → Allow Unsigned Extensions** is on, and turns that option off every time Safari quits. Signing in with a free Apple ID in Xcode avoids that.
+
+### Building with an older Xcode
+
+If your Xcode can't open `xcode/Currency Converter.xcodeproj`, generate a new wrapper project from the extension source:
+
+```bash
+xcrun safari-web-extension-converter extension --macos-only --app-name "Currency Converter" \
+  --bundle-identifier com.yourname.CurrencyConverter --project-location /tmp/cc
+```
+
+Then build and run it from Xcode with your team selected under **Signing & Capabilities** for both targets.
+
+## Usage
+
+- Select a price with the mouse (or with Shift and the arrow keys). The bubble appears above the selection.
+- Click the bubble to copy the converted amount.
+- Press Esc, click elsewhere or scroll to close it.
+- Click the toolbar button to change the target currency, choose what `$` means, or refresh the rates.
+
+When a selection contains several numbers, the extension converts the one next to a currency symbol, code or name. Selections longer than 80 characters are ignored.
+
+## Exchange rates
+
+Rates come from [ExchangeRate-API](https://www.exchangerate-api.com)'s open access endpoint, with the [Frankfurter](https://frankfurter.dev) API (European Central Bank reference rates) as a fallback. Both update once a day. The extension caches them for 6 hours and keeps using the last rates it has when you're offline.
+
+Rates are for reference only. Your bank or card will use its own rate.
+
+## Privacy
+
+- Selected text is read and parsed only inside the page, on your Mac.
+- The only network requests are to download exchange rate tables from the two providers above. They never include anything from the pages you visit.
+- Settings and cached rates are stored locally by Safari. There are no analytics and no accounts.
+
+See [PRIVACY.md](PRIVACY.md).
+
+## Development
+
+```
+extension/          Web extension source (Manifest V3)
+  parser.js         Finds the amount and currency in the selected text
+  content.js        Selection handling and the bubble
+  background.js     Downloads and caches rates, converts
+  popup.html/js     Toolbar popup with the settings
+  _locales/         English and Spanish strings
+tests/              Parser tests (Node's built-in test runner)
+xcode/              macOS wrapper app generated by safari-web-extension-converter
+```
+
+The Xcode project references the files in `extension/` directly, so there's a single copy of the source.
+
+```bash
+npm test        # or: make test   (Node 18 or later, no dependencies)
+make build TEAM=XXXXXXXXXX
+```
+
+After changing the extension, run `make install` again and reload the page in Safari. To debug, turn on **Settings → Advanced → Show features for web developers**, then use **Develop → Web Extension Background Content** for the background script and the regular Web Inspector for the content script.
+
+Bug reports and pull requests are welcome. If a price format isn't recognized, please open an issue with the exact text you selected.
+
+## License
+
+[MIT](LICENSE)

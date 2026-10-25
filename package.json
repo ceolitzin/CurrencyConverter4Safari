@@ -1,0 +1,10 @@
+{
+  "name": "currency-converter-safari",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Safari extension: select a price on any page and see it converted to your currency.",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test tests/*.test.js"
+  }
+}
