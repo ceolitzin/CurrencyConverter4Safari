@@ -16,4 +16,4 @@ First public release.
 - English and Spanish interface.
 - macOS wrapper app, `make install`, parser tests and CI.
 
-[1.0.0]: https://github.com/ceolitzin/CurrencyConverter4Safari/commits/master
+[1.0.0]: https://github.com/ceolitzin/CurrencyConverter4Safari/releases/tag/v1.0.0
